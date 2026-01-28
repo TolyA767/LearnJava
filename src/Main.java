@@ -2,21 +2,33 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        System.out.println("Введите число 1:");
+        int a = in.nextInt();
 
-        int[] nums = new int[10];
-        System.out.println("Заполните массив любыми 10-ю цифрами:");
-        for (int i = 0; i < nums.length; i++){
-            int number = in.nextInt();
-            nums[i] = number;
-        }
+        System.out.println("Введите число 2:");
+        int b = in.nextInt();
+        in.nextLine();
 
-        int largest = -1;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] > largest) {
-                largest = nums[i];
+        System.out.println("Выберите арифметическую операцию:");
+        System.out.println(" 1 - (+) \n 2 - (-) \n 3 - (*) \n 4 - (/)");
+        String operation = in.nextLine();
+
+        switch (operation) {
+            case "1":
+                System.out.printf("%d + %d = %d", a, b, a + b);
+                break;
+            case "2":
+                System.out.printf("%d - %d = %d", a, b, a - b);
+                break;
+            case "3":
+                System.out.printf("%d * %d = %d", a, b, a * b);
+                break;
+            case "4": {
+                if (b != 0)
+                    System.out.printf("%d / %d = %d", a, b, a / b);
+                else
+                    break;
             }
         }
-
-        System.out.println("Максимальное число массива nums: " + largest);
     }
 }
