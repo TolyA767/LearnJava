@@ -1,25 +1,36 @@
+import java.util.Date;
 public class Main {
     public static void main(String[] args) {
-        Person tolya  = new Person();
-        tolya.name = "Anatoliy";
-        tolya.age = 18;
-        System.out.println(tolya.name);
-        System.out.println(tolya.age);
+        Person anna = new Person("Anna");
+        System.out.println(anna.cnt);
+        Person olya = new Person("Olya");
+        System.out.println(olya.cnt);
 
-        Person tom = new Person();
-        tom.name = "Tom";
-        tom.age = 17;
-        System.out.println(tom.name);
-        System.out.println(tom.age);
+        int res = Calculator.Sum(5, 10);
+        System.out.println(res);
 
-        Person sasha = new Person();
-        System.out.println(sasha.name); // null
-        System.out.println(sasha.age); // 0
+        Date curDate = new Date();
+        System.out.println(curDate);
     }
 }
 
 class Person {
     String name;
-    int age;
+    static int cnt = 0;
 
+    Person(String name) {
+        this.name = name;
+        cnt += 1;
+    }
+}
+
+class Calculator {
+
+    static int Sum(int a, int b) {
+        return a + b;
+    }
+
+    int Sum2(int a, int b) {
+        return a + b;
+    }
 }
