@@ -7,16 +7,16 @@ public class MyWallet {
     private int incorAttempts = 0; // считает неправильные вводы пинкода
     // Check
     private boolean isValidPin(String pin) {
-        // 1.
+        // 1. отсев всех случаев когда длина не равна 4
         if (pin.length() != 4)
             return false;
-        // 2.
+        // 2. Проверка, что пин-код - число
         for (int i = 0; i < 4; i++) {
             char c = pin.charAt(i);
             if (c < '0' || c > '9')
                 return false;
         }
-        // 3.
+        // 3. если никуда не зашли, то введеный пин-код число
         return true;
     }
     // Constructor
