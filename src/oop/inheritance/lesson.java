@@ -1,6 +1,6 @@
 package oop.inheritance;
 
-public class Program {
+public class lesson {
     public static void main(String[] args) {
         Employee bob = new Employee("Bob", "Ozon");
         bob.print();
