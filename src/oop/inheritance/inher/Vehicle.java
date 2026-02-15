@@ -1,4 +1,4 @@
-package oop.inheritance;
+package oop.inheritance.inher;
 
 // Задача: "Городская транспортная система"
 // Создать иерархию классов для разных видов транспорта в городе))
@@ -8,7 +8,7 @@ public class Vehicle {
     protected int year;
     protected int maxSpeed;
 
-    Vehicle(String brand, int year, int maxSpeed) {
+    protected Vehicle(String brand, int year, int maxSpeed) {
         this.brand = brand;
         this.year = year;
         this.maxSpeed = maxSpeed;

@@ -1,4 +1,4 @@
-package oop.inheritance;
+package oop.inheritance.inher;
 
 public class Bus extends Vehicle {
     protected int passengerCapacity; // вместимость пассажиров

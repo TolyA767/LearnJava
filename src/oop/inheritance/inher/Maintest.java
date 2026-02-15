@@ -1,4 +1,4 @@
-package oop.inheritance;
+package oop.inheritance.inher;
 
 public class Maintest {
     public static void main(String[] args) {

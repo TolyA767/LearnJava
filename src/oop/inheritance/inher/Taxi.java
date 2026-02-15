@@ -1,6 +1,4 @@
-package oop.inheritance;
-
-import java.beans.PropertyEditorSupport;
+package oop.inheritance.inher;
 
 public class Taxi extends Vehicle {
     private double price;
