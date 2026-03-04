@@ -1,0 +1,18 @@
+package collections.Generics;
+
+public class Example<T, V> {
+    private String string = "";
+
+    public String getString() {
+        return string;
+    }
+
+    public void addToString(T t, V v) {
+        if (this.string.equals("")) {
+            this.string = this.string + t.toString() + " - " + v;
+        } else {
+            this.string = this.string + "\n" + t.toString() + " - " + v;
+        }
+    }
+
+}
