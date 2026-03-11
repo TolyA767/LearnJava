@@ -9,8 +9,10 @@ package collections.arraylist.task1;
 */
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-public class Lvl1 {
+public class Tasks {
     public static void main(String[] args) {
         ArrayList<String> friends = new ArrayList<>();
         // 1.1
@@ -40,23 +42,38 @@ public class Lvl1 {
         System.out.println("Размер массива friends = " + friends.size());
         System.out.println();
 /*
-Задача 2.1: Проверь, есть ли в списке имя "Петя". Если есть — выведи его индекс.
+Задача 2.1: Проверь, есть ли в списке имя "Ansar". Если есть — выведи его индекс (первое вхождение).
 Задача 2.2: Найди последнее вхождение имени "Анна" (если оно есть в списке несколько раз).
 Задача 2.3: Создай список чисел ArrayList<Integer> от 1 до 10.
 Выведи все чётные числа из списка. Подсказка: % 2 == 0
 */
         // 2.1
         for (int i = 0; i < friends.size(); i++) {
-            if (friends.get(i) == "Петя") {
+            if (friends.get(i).equals("Ruslan")) {
                 System.out.println("Индекс: " + i);
-            } else {
-                continue;
+                break;
             }
         }
-        // 2.1
+        System.out.println();
+
+        // 2.2
+        friends.add("Анна");
+        friends.add(3, "Анна");
         int lastAnna = friends.lastIndexOf("Анна");
-        if (lastAnna >0)
-        System.out.println("Последнее вхождение имени Анна: " + lastAnna);
+        if (lastAnna != -1) {
+            System.out.println("Последнее вхождение имени Анна: " + lastAnna);
+        } else {
+            System.out.println("Имени Анна нету в списке");
+        }
+
+        // 2.3
+        ArrayList<Integer> numbers = new ArrayList<>();
+        Collections.addAll(numbers, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        for (int i : numbers) {
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
+        }
 
 
     }
