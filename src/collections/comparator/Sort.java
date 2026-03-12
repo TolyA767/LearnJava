@@ -13,30 +13,51 @@ public class Sort {
         Person max = new Person("Max", 15);
         Person sasha = new Person("Sasha", 43);
         Person dima = new Person("Dima", 32);
-        Collections.addAll(people, tom, alex, max, sasha, dima);
-        people.sort(new PersonNameComparator());
+        Person dima2 = new Person("Dima", 38);
+        Person tom2 = new Person("Tom", 48);
+        Collections.addAll(people, tom, alex, max, sasha, dima, tom2, dima2);
+        // Множественное сравнение, если имена совпадают, то сравниваем по возрасту
+        Comparator<Person> totalComparator = new PersonNameComparator().thenComparing(new PersonAgeComparator());
+        people.sort(totalComparator);
+        for (var p : people) {
+            p.print();
+        }
+        System.out.println();
+        // Сортировка через интерфейс Comparable
+        var people2 = new ArrayList<String>();
+        people2.add("Tom");
+        people2.add("Bob");
+        people2.add("Sam");
+        people2.sort(null);
+        for(var p : people2){
+            System.out.println(p);
+        }
 
     }
 }
 
-class PersonNameComparator implements Comparator<Person>{
+class PersonNameComparator implements Comparator<Person> {
     // сортировка по имени
-    public int compare(Person a, Person b){
+    public int compare(Person a, Person b) {
         return a.getName().compareTo(b.getName());
     }
 }
-class PersonAgeComparator implements Comparator<Person>{
+
+class PersonAgeComparator implements Comparator<Person> {
     // сортировка по возрасту
-    public int compare(Person a, Person b){
+    public int compare(Person a, Person b) {
         return a.getAge() - b.getAge();
     }
 }
+
 class Person {
     String name;
     int age;
+
     public String getName() {
         return name;
     }
+
     public int getAge() {
         return age;
     }
