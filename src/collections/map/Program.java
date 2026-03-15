@@ -1,14 +1,12 @@
-package collections.dictionary;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Set;
+package collections.map;
+import java.util.*;
+
 public class Program {
     public static void main(String[] args) {
         Map<String, String> phoneBook = new HashMap<>();
         phoneBook.put("Мама", "+79278417445");
         phoneBook.put("Папа", "+79176543669");
         phoneBook.put("Друг", "+79374745117");
-
         // Получаем номер друга, метод get
         String friend = phoneBook.get("Друг");
         System.out.println("Номер друга " + friend);

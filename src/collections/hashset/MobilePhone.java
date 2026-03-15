@@ -9,6 +9,7 @@ public class MobilePhone {
         addNumber(numbers, "89274320851");
         addNumber(numbers, "89378540211");
         addNumber(numbers, "89274320851");
+
     }
 
     public static void addNumber(Set<String> array, String number) {
